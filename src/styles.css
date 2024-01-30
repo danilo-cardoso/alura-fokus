@@ -1,1 +1,7 @@
-/* You can add global styles to this file, and also import other style files */
+@import url(./reset.css);
+
+:root {
+  --cor-lilas: #B872FF;
+  --linear-foco: linear-gradient(to bottom, #8B1FF8, #041832, #01080E);
+
+}
