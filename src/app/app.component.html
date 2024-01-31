@@ -1,12 +1,12 @@
-<div class="main-container">
+<div class="main-container" [style.background]="currBg.currColor">
   <h1>
     <img class="logo" src="../assets/Logo e Favicons/Logo.png" alt="Logo Fokus">
   </h1>
   <div class="container">
     <span class="container__content">
-      Otimize sua produtividade,<br/><strong>mergulhe no que importa</strong>
+      {{ currBg.currText }}<br/><strong>{{ currBg.currStrong }}</strong>
     </span>
-    <img class="container__img" src="../assets/Imagens/Imagem foco.png" alt="">
+    <img class="container__img" src="{{ currBg.currImage }}" alt="">
   </div>
-  <app-timer></app-timer>
+  <app-timer [(currBg)]="currBg"></app-timer>
 </div>

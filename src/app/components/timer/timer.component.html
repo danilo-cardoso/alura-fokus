@@ -1,12 +1,12 @@
 <section class="timer-card">
   <div class="timer-card__buttons">
-    <button class="active">
+    <button [ngClass]="active.focus" (click)="bgChange('focus')">
       <span>Foco</span>
     </button>
-    <button class="">
+    <button [ngClass]="active.short" (click)="bgChange('short')">
       <span>Descanso curto</span>
     </button>
-    <button class="">
+    <button [ngClass]="active.long" (click)="bgChange('long')">
       <span>Descanso longo</span>
     </button>
   </div>

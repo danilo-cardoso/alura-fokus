@@ -1,8 +1,7 @@
-:host {
+.main-container {
   display: inline-block;
   width: 100%;
   height: 100%;
-  background-image: url('../assets/Imagens/Background-linhas.png'), var(--linear-foco);
   padding: 0 1.5rem;
 }
 
@@ -23,6 +22,7 @@ h1 {
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
+  margin-bottom: 6rem;
 }
 
 .container__content {
