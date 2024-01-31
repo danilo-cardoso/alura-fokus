@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "alura-fokus:build:production"
+              "buildTarget": "alura-fokus:build:production"
             },
             "development": {
-              "browserTarget": "alura-fokus:build:development"
+              "buildTarget": "alura-fokus:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "alura-fokus:build"
+            "buildTarget": "alura-fokus:build"
           }
         },
         "test": {

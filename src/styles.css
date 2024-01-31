@@ -1,7 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import url(./reset.css);
 
 :root {
+  --main-font: 'Unbounded', sans-serif;
+  --second-font: 'Montserrat', sans-serif;
   --cor-lilas: #B872FF;
+  --cor-azul-real: #144480;
+  --bg-card-timer: rgb(20, 68, 128, 0.3);
   --linear-foco: linear-gradient(to bottom, #8B1FF8, #041832, #01080E);
+  --linear-curto: linear-gradient(to bottom, #0F725C, #041832, #01080E);
+  --linear-longo: linear-gradient(to bottom, #1875E9, #041832, #01080E);
+  --linear-botoes: linear-gradient(to bottom, #B872FF, #144480);
 
+  font-family: var(--main-font);
 }

@@ -1,0 +1,41 @@
+:host {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/Imagens/Background-linhas.png'), var(--linear-foco);
+  padding: 0 1.5rem;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  padding: 2.5rem 0;
+}
+
+.logo {
+  width: 9.75rem;
+  height: 2.5rem;
+}
+
+.container {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.container__content {
+  align-self: flex-start;
+  line-height: 2.5rem;
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+
+.container__content strong {
+  font-weight: 400;
+}
+
+.container__img {
+  width: 80%;
+}

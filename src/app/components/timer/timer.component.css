@@ -1,0 +1,101 @@
+.timer-card {
+  width: 100%;
+  padding: 1.5rem 1rem;
+  border: 2px solid var(--cor-azul-real);
+  border-radius: 1rem;
+  background-color: var(--bg-card-timer);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.timer-card__buttons {
+  display: flex;
+  gap: .5rem;
+  font-size: 0.75rem;
+  font-weight: 200;
+  color: #fff;
+  font-family: var(--second-font);
+}
+
+.timer-card__buttons button {
+  padding: .7rem 0.45rem;
+}
+
+.timer-card__buttons .active {
+  background-color: var(--cor-azul-real);
+  border-radius: .5rem;
+  font-weight: 500;
+}
+
+.timer {
+  font-size: 3.4rem;
+  color: #fff;
+  font-weight: 600;
+}
+
+.timer-card__music {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  color: #fff;
+  font-weight: 200
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 3.75rem;
+  height: 2rem;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #1B293B;
+  border-radius: 2rem;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.5rem;
+  width: 1.5rem;
+  left: 0.35rem;
+  bottom: 0.25rem;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: .4s;
+}
+
+.switch input:checked + .slider {
+  background-color: var(--cor-lilas);
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(1.5rem);
+}
+
+.timer-card__start {
+  display: flex;
+  gap: .725rem;
+  align-items: center;
+  padding: .5rem 2rem;
+  background: var(--linear-botoes);
+  border-radius: 2rem;
+  font-family: var(--second-font);
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+  color: #fff;
+}
