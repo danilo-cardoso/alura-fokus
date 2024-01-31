@@ -14,7 +14,5 @@ export class AppComponent {
     currStrong: 'mergulhe no que importa',
     currColor: "url('../assets/Imagens/Background-linhas.png'), var(--linear-foco)"
   }
-
   constructor() { }
-
 }

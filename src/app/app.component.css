@@ -1,8 +1,9 @@
 .main-container {
   display: inline-block;
-  width: 100vw;
-  height: auto;
+  background-repeat: no-repeat;
+  width: 100%;
   padding: 0 1.5rem;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -38,4 +39,33 @@ h1 {
 
 .container__img {
   width: 80%;
+  max-width: 285.58px;
+}
+
+@media screen and (min-width: 768px) {
+  .container__content {
+    font-size: 3.35rem;
+    line-height: 150%;
+    padding: 0 6rem;
+  }
+
+  .container__img {
+    width: 60%;
+    max-width: 432px;
+  }
+
+  app-timer {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10rem;
+    margin-bottom: 0;
+  }
 }

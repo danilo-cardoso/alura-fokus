@@ -100,3 +100,26 @@
   font-weight: 500;
   color: #fff;
 }
+
+@media screen and (min-width: 768px) {
+  .timer-card {
+    width: 70%;
+  }
+
+  .timer-card__buttons,
+  .switch__label,
+  .timer-card__start {
+    font-size: 1.25rem;
+  }
+
+  .timer {
+    font-size: 7rem;
+  }
+
+}
+
+@media screen and (min-width: 1440px) {
+  .timer-card {
+    width: 40%;
+  }
+}

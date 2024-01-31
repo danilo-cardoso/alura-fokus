@@ -48,7 +48,7 @@ export class TimerComponent {
         this.currBg.currColor = "url('../assets/Imagens/Background-linhas.png'), var(--linear-curto)";
         this.activeState = 'short'
         this.timer = 300;
-        this.formattedTimer = '5:00';
+        this.formattedTimer = '05:00';
         break;
 
       case 'long':
