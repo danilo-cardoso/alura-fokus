@@ -22,8 +22,9 @@ export class TimerComponent {
     long: ''
   };
 
-  bgChange(input: string) {
+  musica = new Audio('../../../assets/Músicas e sons/Opções música foco/');
 
+  bgChange(input: string) {
     switch (input) {
       case 'focus':
         this.currBg.currImage = '../assets/Imagens/Imagem foco.png';
@@ -61,4 +62,15 @@ export class TimerComponent {
 
     this.currBgChange.emit(this.currBg);
   }
+
+  alternarMusica() {
+    this.musica.loop = true;
+    if (this.musica.paused) {
+      this.musica.play();
+    }
+    else {
+      this.musica.pause();
+    }
+  }
+
 }
