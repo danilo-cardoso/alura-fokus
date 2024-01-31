@@ -1,16 +1,16 @@
 <section class="timer-card">
   <div class="timer-card__buttons">
-    <button [ngClass]="active.focus" (click)="bgChange('focus')">
+    <button [ngClass]="activeState == 'focus' ? 'active' : ''" (click)="bgChange('focus')">
       <span>Foco</span>
     </button>
-    <button [ngClass]="active.short" (click)="bgChange('short')">
+    <button [ngClass]="activeState == 'short' ? 'active' : ''" (click)="bgChange('short')">
       <span>Descanso curto</span>
     </button>
-    <button [ngClass]="active.long" (click)="bgChange('long')">
+    <button [ngClass]="activeState == 'long' ? 'active' : ''" (click)="bgChange('long')">
       <span>Descanso longo</span>
     </button>
   </div>
-  <div class="timer">25:00</div>
+  <div class="timer">{{ timer }}</div>
   <div class="timer-card__music">
     <label class="switch">
       <input type="checkbox" id="alternar-musica" (change)="alternarMusica()">
@@ -20,10 +20,10 @@
       Música
     </label>
   </div>
-  <button class="timer-card__start">
-    <img src="../../../assets/Ícones/play_arrow.png" alt="Ícone de tocar">
+  <button class="timer-card__start" (click)="startTimer()">
+    <img src="{{ timerBtnIcon }}" alt="Ícone de tocar">
     <span>
-      Começar
+      {{ timerBtnText }}
     </span>
   </button>
 </section>

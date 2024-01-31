@@ -16,13 +16,17 @@ export class TimerComponent {
 
   @Output() currBgChange = new EventEmitter<{ currImage: string, currText: string, currStrong: string, currColor: string }>()
 
-  active = {
-    focus: 'active',
-    short: '',
-    long: ''
-  };
+  activeState = 'focus';
+
+  timer = 1500;
+  timerInterval: number | null = null;
+  timerBtnText = 'Começar';
+  timerBtnIcon = '../../../assets/Ícones/play_arrow.png';
 
   musica = new Audio('../../../assets/Músicas e sons/Opções música foco/');
+  timerStartSound = new Audio('../../../assets/Músicas e sons/Press play.wav');
+  timerStopSound = new Audio('../../../assets/Músicas e sons/Press stop button.mp3');
+  timerEndSound = new Audio('../../../assets/Músicas e sons/Contagem regressiva e toque.mp3');
 
   bgChange(input: string) {
     switch (input) {
@@ -31,9 +35,8 @@ export class TimerComponent {
         this.currBg.currText = 'Otimize sua produtividade,';
         this.currBg.currStrong = 'mergulhe no que importa';
         this.currBg.currColor = "url('../assets/Imagens/Background-linhas.png'), var(--linear-foco)";
-        this.active.focus = 'active';
-        this.active.short = '';
-        this.active.long = '';
+        this.activeState = 'focus';
+        this.timer = 1500;
         break;
 
       case 'short':
@@ -41,9 +44,8 @@ export class TimerComponent {
         this.currBg.currText = 'Que tal dar uma respirada?';
         this.currBg.currStrong = 'Faça uma pausa curta!';
         this.currBg.currColor = "url('../assets/Imagens/Background-linhas.png'), var(--linear-curto)";
-        this.active.short = 'active';
-        this.active.focus = '';
-        this.active.long = '';
+        this.activeState = 'short'
+        this.timer = 300;
         break;
 
       case 'long':
@@ -51,9 +53,8 @@ export class TimerComponent {
         this.currBg.currText = 'Hora de voltar à superfície.';
         this.currBg.currStrong = 'Faça uma pausa longa.';
         this.currBg.currColor = "url('../assets/Imagens/Background-linhas.png'), var(--linear-longo)";
-        this.active.long = 'active';
-        this.active.short = '';
-        this.active.focus = '';
+        this.activeState = 'long';
+        this.timer = 900;
         break;
 
       default:
@@ -62,6 +63,62 @@ export class TimerComponent {
 
     this.currBgChange.emit(this.currBg);
   }
+
+  setTimer(): () => void {
+    const timerFunct = () => {
+      if (this.timerInterval) {
+        if (this.timer == 10) {
+          this.timerEndSound.play();
+        }
+
+        if (this.timer <= 0) {
+          this.pauseTimer();
+          switch (this.activeState) {
+            case 'focus':
+              this.timer = 1500;
+              break;
+
+            case 'short':
+              this.timer = 300;
+              break;
+
+            case 'long':
+              this.timer = 900;
+              break;
+
+            default:
+              break;
+          }
+          return;
+        }
+        this.timer--;
+      }
+    }
+    return timerFunct;
+  }
+
+  startTimer() {
+    const timerFunct = this.setTimer();
+    if (this.timerInterval) {
+      this.pauseTimer();
+      return;
+    }
+    this.timerStartSound.play();
+    this.timerInterval = window.setInterval(timerFunct, 1000);
+    this.timerBtnText = 'Pausar';
+    this.timerBtnIcon = '../../../assets/Ícones/pause.png'
+  }
+
+  pauseTimer() {
+    if (this.timerInterval) {
+      this.timerStopSound.play();
+      window.clearInterval(this.timerInterval)
+      this.timerInterval = null;
+      this.timerBtnText = 'Começar';
+      this.timerBtnIcon = '../../../assets/Ícones/play_arrow.png';
+    }
+  }
+
 
   alternarMusica() {
     this.musica.loop = true;
