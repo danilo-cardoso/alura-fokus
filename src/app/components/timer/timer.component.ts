@@ -19,6 +19,7 @@ export class TimerComponent {
   activeState = 'focus';
 
   timer = 1500;
+  formattedTimer = '25:00';
   timerInterval: number | null = null;
   timerBtnText = 'Começar';
   timerBtnIcon = '../../../assets/Ícones/play_arrow.png';
@@ -37,6 +38,7 @@ export class TimerComponent {
         this.currBg.currColor = "url('../assets/Imagens/Background-linhas.png'), var(--linear-foco)";
         this.activeState = 'focus';
         this.timer = 1500;
+        this.formattedTimer = '25:00';
         break;
 
       case 'short':
@@ -46,6 +48,7 @@ export class TimerComponent {
         this.currBg.currColor = "url('../assets/Imagens/Background-linhas.png'), var(--linear-curto)";
         this.activeState = 'short'
         this.timer = 300;
+        this.formattedTimer = '5:00';
         break;
 
       case 'long':
@@ -55,6 +58,7 @@ export class TimerComponent {
         this.currBg.currColor = "url('../assets/Imagens/Background-linhas.png'), var(--linear-longo)";
         this.activeState = 'long';
         this.timer = 900;
+        this.formattedTimer = '15:00';
         break;
 
       default:
@@ -92,6 +96,8 @@ export class TimerComponent {
           return;
         }
         this.timer--;
+        const timerAux = new Date(this.timer * 1000);
+        this.formattedTimer = timerAux.toLocaleTimeString('pt-Br', {minute: '2-digit', second: '2-digit'})
       }
     }
     return timerFunct;
