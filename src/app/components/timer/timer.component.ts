@@ -64,7 +64,6 @@ export class TimerComponent {
       default:
         break;
     }
-
     this.currBgChange.emit(this.currBg);
   }
 
@@ -74,7 +73,6 @@ export class TimerComponent {
         if (this.timer == 10) {
           this.timerEndSound.play();
         }
-
         if (this.timer <= 0) {
           this.pauseTimer();
           switch (this.activeState) {
@@ -125,7 +123,6 @@ export class TimerComponent {
     }
   }
 
-
   alternarMusica() {
     this.musica.loop = true;
     if (this.musica.paused) {
@@ -135,5 +132,4 @@ export class TimerComponent {
       this.musica.pause();
     }
   }
-
 }
