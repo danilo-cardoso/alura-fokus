@@ -1,27 +1,25 @@
-# AluraFokus
+# Alura Fokus
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
+![Logo do Alura Fokus](https://github.com/danilo-cardoso/alura-fokus/assets/105827271/cf27d0d7-4c9c-468d-ae33-c5e680fa8e10)
 
-## Development server
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) ![Angular](https://img.shields.io/badge/Angular-000000?style=for-the-badge&logo=angular&logoColor=ff025c) ![Typescript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Bem vinde ao Alura Fokus!
 
-## Code scaffolding
+Inspirado na estratégia de gerenciamento de tempo desenvolvida no livro 'A técnica de Pomodoro', esta SPA desenvolvida com Angular tem a funcionalidade de te ajudar a manter o foco no seu desenvolvimento, com timers para seus minutos de estudo e pausa como sugerido pelo método.
+O projeto foi criado durante um curso na plataforma de estudos de tecnologia Alura, mas como um desafio à proposta original, este projeto foi criado com o uso do framework Angular, fazendo o uso de two-way data binding, ngClass, além de outras diretivas do framework.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## :hammer: Funcionalidades do projeto
 
-## Build
+- `Diferentes timers para diferentes momentos`: O projeto possui três timers: Foco, Descanso curto e Descanso longo, de 25, 5 e 15 minutos respectivamente. A ideia é que a cada período de 25 minutos (timer Foco) você decida entre um tipo de descanso (timer Descanso curto ou Descanso longo) para melhorar a sua retenção do conteúdo que está estudando.
+- `Música para os meus ouvidos`: O projeto vem com uma opção de faixa de música relaxante para te ajudar a se concentrar nos estudos. Para ativar a música, basta clicar no botão slider abaixo do timer e aproveitar o impulso de concentração!
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+https://github.com/danilo-cardoso/alura-fokus/assets/105827271/0ef1d82e-792f-47bf-8307-acae6af9581e
 
-## Running unit tests
+## Acesso ao projeto
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Para acessar o projeto, basta clicar no link a seguir e você será direcionado à pagina web onde o site está hospedado:
 
-## Running end-to-end tests
+https://alura-fokus-beige.vercel.app
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+A página foi desenhada usando o conceito de responsividade mobile-first e deve possuir layout responsivo para os diversos tamanhos de tela do mercado.
